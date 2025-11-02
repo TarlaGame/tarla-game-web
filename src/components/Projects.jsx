@@ -37,7 +37,16 @@ function ProjectCard({ p }) {
     <Card className="card project-card" sx={{ display: 'flex', flexDirection: 'column', gap: 1, alignItems: 'stretch' }}>
       {preview && (
         <Box sx={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-          <CardMedia component="img" image={preview} alt={p.name} sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <CardMedia
+            component="img"
+            image={preview}
+            alt={p.name}
+            loading="lazy"
+            decoding="async"
+            width="1920"
+            height="1080"
+            sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
 
           {/* Prev/next buttons: visible with gray translucent background */}
           {imgs.length > 1 && (

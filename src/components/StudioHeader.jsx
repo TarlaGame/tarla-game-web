@@ -23,7 +23,9 @@ export default function StudioHeader({ info }) {
 
   return (
     <header className="header">
-      <div className="hero-image" style={{ backgroundImage: `url(${titleImage})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+      <div className="hero-image">
+        {/* use an actual img so the browser can prioritize and decode it correctly */}
+        <img className="hero-bg" src={titleImage} alt="" loading="eager" decoding="async" fetchPriority="high" />
         <div className="hero-overlay" />
         <div className="hero-content" ref={titleRef}>
           <h1 className="header-title">{info.name}</h1>
