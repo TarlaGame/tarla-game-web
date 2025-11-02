@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  # 当 push 到 main 分支时触发部署
+  push:
+    branches: [main]
+  # 允许从 Actions 标签页手动触发部署
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write # 用于部署到 Pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # 构建输出目录
+          branch: gh-pages # 部署分支
