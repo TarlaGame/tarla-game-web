@@ -32,7 +32,7 @@ const data = {
     { id: 'bilibili', label: 'B站', url: 'https://space.bilibili.com/3546784779470966?spm_id_from=333.337.search-card.all.click' },
     { id: 'weibo', label: '微博', url: 'https://weibo.com/u/8445523345' },
     { id: 'xiaoheihe', label: '小黑盒', url: 'https://www.xiaoheihe.cn/app/user/profile/89205010' },
-    { id: 'douyin', label: '抖音', url: '#' },
+    { id: 'douyin', label: '抖音', url: 'https://www.douyin.com/user/MS4wLjABAAAAtVe6ZpWZLaKy7AyHgStJF3H-bAa2Y-Zvmpl8J8DozdubV4iWBP6_KQT3ThCy5Ub1' },
   ]
 }
 
