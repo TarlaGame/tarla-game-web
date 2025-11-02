@@ -34,12 +34,6 @@ export default function StudioHeader({ info }) {
         <div className="header-inner">
           <div className="header-left">
             <p className="header-desc">{info.description}</p>
-            <div className="cta">
-              <a className="btn primary" href={`mailto:${info.email}`}>
-                <span>联系我们</span>
-                <span className="btn-email">{info.email}</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

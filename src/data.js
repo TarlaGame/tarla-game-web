@@ -1,34 +1,38 @@
 const data = {
   studio: {
     name: '白塔纪事工作室',
-    tagline: '休闲·放松的模拟经营与剧情体验',
+    tagline: '',
     description:
-      '我们专注于温暖、缓节奏的模拟经营与剧情向游戏，喜欢把玩家带入森林与田园间的静谧时光。我们的作品强调叙事与慢节奏游戏循环，让玩家在游戏中放松、探索与成长。',
-    location: '中国',
-    email: 'hello@baitaji.sh'
+      '你好！我们是白塔纪事工作室。目前我们正在研发剧情向+模拟经营独立游戏《塔尔拉杂货店》，欢迎关注我们的进展！',
   },
   projects: [
     {
-      id: 'p1',
-      name: '林间日常',
-      short: '一种缓慢而温暖的经营模拟体验',
-      description: '在森林中的小屋里经营生活，种植、交易与开展小镇故事。享受日常和与村民的温柔交流。',
-      tags: ['模拟', '休闲', '叙事'],
-      url: '#'
+      id: 'turi',
+      name: '小兔狸找太阳',
+      short: '轻松可爱的冒险解谜',
+      description: 'TapTap聚光灯GameJam，最佳创意奖入围。控制小兔狸在森林中探索，寻找失落的太阳碎片，解谜与收集。',
+      tags: ['冒险', '解谜', '休闲'],
+      images: ['turi/1.png','turi/2.png','turi/3.png','turi/4.png','turi/5.png'],
+      download: 'https://pan.baidu.com/s/1uGB_HIAwDcuA550ltihcDw?pwd=turi',
+      video: 'https://www.bilibili.com/video/BV1wRyXBaEx4/?spm_id_from=333.1387.homepage.video_card.click'
     },
     {
-      id: 'p2',
-      name: '白塔物语',
-      short: '以故事为核心的探索型游戏',
-      description: '跟随主角在古老白塔与森林之间穿梭，解开记忆与城镇历史的碎片。',
-      tags: ['剧情', '探索'],
-      url: '#'
+      id: 'candy',
+      name: '糖果多利姆',
+      short: '甜蜜的消除与经营结合体验',
+      description: '经营糖果店并通过趣味消除玩法吸引顾客，打造属于你的糖果王国。',
+      tags: ['消除', '经营', '休闲'],
+      images: ['candyDream/1.png','candyDream/2.png','candyDream/3.png'],
+      download: 'https://pan.baidu.com/s/1KRURW4ssEgF8lasEPFFyHg?pwd=turi',
+      video: 'https://www.bilibili.com/video/BV1wRyXBaEx4/?spm_id_from=333.1387.homepage.video_card.click'
     }
   ],
   social: [
-    { id: 'github', label: 'GitHub', url: 'https://github.com/TarlaGame' },
-    { id: 'twitter', label: 'Twitter', url: 'https://twitter.com/' },
-    { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/' }
+    { id: 'xiaohongshu', label: '小红书', url: 'https://www.xiaohongshu.com/user/profile/6633d6f90000000003030ea3?xsec_token=AB1U2JcxVggH_AJnlt4U1KQvgCWwnTao953x4gM-Q9OpI%3D&xsec_source=pc_search' },
+    { id: 'bilibili', label: 'B站', url: 'https://space.bilibili.com/3546784779470966?spm_id_from=333.337.search-card.all.click' },
+    { id: 'weibo', label: '微博', url: 'https://weibo.com/u/8445523345' },
+    { id: 'xiaoheihe', label: '小黑盒', url: 'https://www.xiaoheihe.cn/app/user/profile/89205010' },
+    { id: 'douyin', label: '抖音', url: '#' },
   ]
 }
 

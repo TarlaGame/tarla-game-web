@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import data from './data'
+import NavBar from './components/NavBar'
 import StudioHeader from './components/StudioHeader'
 import Projects from './components/Projects'
 import SocialLinks from './components/SocialLinks'
@@ -20,12 +21,15 @@ export default function App() {
     }
   }, [isLoading])
 
+  // No scroll-reveal animations — intentionally left blank
+
   return (
     <>
       {!showContent && (
         <Splash onLoadComplete={() => setIsLoading(false)} />
       )}
       <div className={`app ${showContent ? 'app-visible' : ''}`}>
+        <NavBar />
         <StudioHeader info={data.studio} />
         <main className="container">
           <section id="projects">
@@ -33,7 +37,7 @@ export default function App() {
             <Projects items={data.projects} />
           </section>
           <section id="contact">
-            <h2>联系 / 社交</h2>
+            <h2>关注我们</h2>
             <SocialLinks links={data.social} />
           </section>
         </main>
