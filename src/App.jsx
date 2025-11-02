@@ -33,7 +33,7 @@ export default function App() {
         <StudioHeader info={data.studio} />
         <main className="container">
           <section id="projects">
-            <h2>项目</h2>
+            <h2>游戏</h2>
             <Projects items={data.projects} />
           </section>
           <section id="contact">
