@@ -19,7 +19,7 @@ export default function NavBar() {
         </button>
 
         <div className={`nav-links ${open ? 'open' : ''}`}>
-          <a href="#projects" onClick={() => setOpen(false)}>项目</a>
+          <a href="#projects" onClick={() => setOpen(false)}>游戏</a>
           <a href="#contact" onClick={() => setOpen(false)}>关注我们</a>
         </div>
       </div>
