@@ -122,7 +122,7 @@ function ProjectCard({ p }) {
                 color: '#fff',
                 '&:hover': { backgroundColor: 'var(--primary-light)' }
               }}
-            >下载</Button>
+            >点击下载：密码turi</Button>
             <Button
               size="medium"
               variant="outlined"

@@ -13,7 +13,7 @@ const data = {
       description: 'TapTap聚光灯GameJam，最佳创意奖入围。控制小兔狸在森林中探索，寻找失落的太阳碎片，解谜与收集。',
       tags: ['冒险', '解谜', '休闲'],
       images: ['turi/1.png','turi/2.png','turi/3.png','turi/4.png','turi/5.png'],
-      download: 'https://pan.baidu.com/s/1uGB_HIAwDcuA550ltihcDw?pwd=turi',
+      download: 'https://ug.link/tarlahstone/filemgr/share-download/?id=df998b1f9e4d4df690387b8591f766b3',
       video: 'https://www.bilibili.com/video/BV1wRyXBaEx4/?spm_id_from=333.1387.homepage.video_card.click'
     },
     {
@@ -23,7 +23,7 @@ const data = {
       description: '经营糖果店并通过趣味消除玩法吸引顾客，打造属于你的糖果王国。',
       tags: ['消除', '经营', '休闲'],
       images: ['candyDream/1.png','candyDream/2.png','candyDream/3.png'],
-      download: 'https://pan.baidu.com/s/1KRURW4ssEgF8lasEPFFyHg?pwd=turi',
+      download: 'https://ug.link/tarlahstone/filemgr/share-download/?id=1f2e0172e7fd4ce5aa7784607a469a43',
       video: 'https://www.bilibili.com/video/BV1wRyXBaEx4/?spm_id_from=333.1387.homepage.video_card.click'
     }
   ],
