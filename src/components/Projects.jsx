@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
@@ -27,15 +27,24 @@ function ProjectCard({ p }) {
   const [openVideo, setOpenVideo] = useState(false)
   const [imgLoaded, setImgLoaded] = useState(false)
   const [imgError, setImgError] = useState(false)
+  const imgRef = useRef(null)
 
   // build image URLs using Vite's import.meta.url
   const imgs = (p.images || []).map(img => new URL(`../images/${img}`, import.meta.url).href)
   const preview = imgs[index] || imgs[0]
 
   // reset load state when image changes
-  React.useEffect(() => {
+  useEffect(() => {
     setImgLoaded(false)
     setImgError(false)
+  }, [preview])
+
+  // if image is cached, mark loaded immediately
+  useEffect(() => {
+    const el = imgRef.current
+    if (el && el.complete && el.naturalWidth > 0) {
+      setImgLoaded(true)
+    }
   }, [preview])
 
   const prev = () => setIndex((i) => (i - 1 + imgs.length) % imgs.length)
@@ -45,21 +54,26 @@ function ProjectCard({ p }) {
     <Card className="card project-card" sx={{ display: 'flex', flexDirection: 'column', gap: 1, alignItems: 'stretch' }}>
       {preview && (
         <Box sx={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-          <CardMedia
-            component="img"
-            image={preview}
+          <img
+            ref={imgRef}
+            src={preview}
             alt={p.name}
             loading="lazy"
             decoding="async"
-            width="384"
-            height="216"
+            width={384}
+            height={216}
             onLoad={() => setImgLoaded(true)}
             onError={() => setImgError(true)}
-            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: imgError ? 'none' : 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: imgError ? 'none' : 'block' }}
           />
 
           {/* Loading/placeholder overlay */}
-          {(!imgLoaded || imgError) && (
+          {!imgLoaded && !imgError && (
+            <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', bgcolor: 'var(--bg-2)' }}>
+              <div className="loading-spinner" />
+            </Box>
+          )}
+          {imgError && (
             <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', bgcolor: 'var(--bg-2)' }}>
               <div className="loading-spinner" />
             </Box>
