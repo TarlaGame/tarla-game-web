@@ -25,7 +25,7 @@ npm run deploy
 
 注意
 
-- 修改 `vite.config.js` 的 `base` 为你的仓库名（当前示例已设为 `/tarla-game-web/`）。如果你要发布到 `https://<username>.github.io/`（username.github.io 仓库），将 `base` 设为 `/`。
+- 修改 `vite.config.js` 的 `base` 为你的仓库名（当前示例已设为 `/tarlah-game-web/`）。如果你要发布到 `https://<username>.github.io/`（username.github.io 仓库），将 `base` 设为 `/`。
 
 后续改进建议
 
