@@ -39,8 +39,11 @@ body {
 
 /* Header / hero */
 header.header{
-  padding:0 0 24px; /* remove top gap so hero touches nav */
-  border-bottom:none;
+  position: relative;
+  top: 0;
+  margin-top: -70px;
+  padding: 0 0 24px; /* remove top gap so hero touches nav */
+  border-bottom: none;
 }
 .header-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .header-left{display:flex;flex-direction:column;gap:8px;flex:1}
@@ -54,8 +57,8 @@ header.header{
 /* Hero section with title image */
 .hero-image {
   position: relative;
-  height: 70vh;
-  min-height: 480px;
+  height: 50vh;
+  min-height: 360px;
   background: var(--bg-1);
   display: flex;
   align-items: center;
@@ -81,10 +84,6 @@ header.header{
   bottom: 0;
   background: var(--gradient-overlay);
 }
-
-/* Floating leaves decorative — disabled */
-.floating-leaves{display:none}
-.leaf{display:none}
 
 /* nav link underline animation */
 .nav-links a{position:relative}
@@ -112,6 +111,12 @@ header.header{
 .hero-content.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.header-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .header-tag {
@@ -178,7 +183,7 @@ header.header{
 
 /* Projects section */
 section {
-  padding: 4rem 0;
+  padding-bottom: 6rem;
   background: var(--bg-1);
 }
 
@@ -365,12 +370,12 @@ footer {
 /* Responsive design */
 @media (max-width: 768px) {
   .hero-image {
-    height: 60vh;
-    min-height: 400px;
+    height: 45vh;
+    min-height: 320px;
   }
   
   .header-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   
   .header-tag {
@@ -393,8 +398,8 @@ footer {
 /* Improved mobile responsiveness */
 @media (max-width: 600px) {
   .hero-image {
-    height: 50vh;
-    min-height: 300px;
+    height: 40vh;
+    min-height: 280px;
     background-position: top center;
   }
 
@@ -403,7 +408,7 @@ footer {
   }
 
   .header-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1.05;
   }
 
@@ -444,8 +449,8 @@ footer {
 }
 
 @media (max-width: 420px) {
-  .hero-image { min-height: 260px; }
-  .header-title { font-size: 1.6rem; }
+  .hero-image { min-height: 240px; }
+  .header-title { font-size: 2rem; }
   .header-tag { font-size: 0.95rem; }
   .splash-logo { max-width: 220px; }
 }
@@ -472,7 +477,43 @@ footer {
 .splash-logo {
   max-width: 400px; /* 2倍大小 */
   height: auto;
-  opacity: 1; /* static logo — no animation */
+  transition: opacity 0.3s ease;
+}
+
+/* Loading spinner for splash screen */
+.splash-loading {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(17, 57, 34, 0.1);
+  border-top-color: var(--deep-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  color: var(--deep-green);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.splash-error {
+  position: absolute;
+  color: var(--text-light);
+  font-size: 1rem;
 }
 
 /* App transition */
@@ -492,9 +533,16 @@ footer {
   position: sticky;
   top: 0;
   z-index: 1100;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  background: rgba(17, 57, 34, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0);
+  transition: background-color 0.35s ease, backdrop-filter 0.35s ease, border-bottom-color 0.35s ease;
+}
+/* when scrolled apply solid deep green background and visible divider */
+.nav.scrolled {
   background: var(--deep-green);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255,255,255,0.15);
 }
 .nav-inner{
   max-width:1140px;margin:0 auto;padding:8px 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:12px;

@@ -1,9 +1,6 @@
 const data = {
   studio: {
     name: '白塔纪事工作室',
-    tagline: '',
-    description:
-      '你好！我们是白塔纪事工作室。目前我们正在研发剧情向+模拟经营独立游戏《塔尔拉杂货店》，欢迎关注我们的进展！',
   },
   projects: [
     {
@@ -29,7 +26,7 @@ const data = {
   ],
   social: [
     { id: 'xiaohongshu', label: '小红书', url: 'https://www.xiaohongshu.com/user/profile/6633d6f90000000003030ea3?xsec_token=AB1U2JcxVggH_AJnlt4U1KQvgCWwnTao953x4gM-Q9OpI%3D&xsec_source=pc_search' },
-    { id: 'bilibili', label: 'B站', url: 'https://space.bilibili.com/3546784779470966?spm_id_from=333.337.search-card.all.click' },
+    { id: 'bilibili', label: 'Bilibili', url: 'https://space.bilibili.com/3546784779470966?spm_id_from=333.337.search-card.all.click' },
     { id: 'weibo', label: '微博', url: 'https://weibo.com/u/8445523345' },
     { id: 'xiaoheihe', label: '小黑盒', url: 'https://www.xiaoheihe.cn/app/user/profile/89205010' },
     { id: 'douyin', label: '抖音', url: 'https://www.douyin.com/user/MS4wLjABAAAAtVe6ZpWZLaKy7AyHgStJF3H-bAa2Y-Zvmpl8J8DozdubV4iWBP6_KQT3ThCy5Ub1' },

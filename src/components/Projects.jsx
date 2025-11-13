@@ -25,10 +25,18 @@ function getEmbedUrl(url){
 function ProjectCard({ p }) {
   const [index, setIndex] = useState(0)
   const [openVideo, setOpenVideo] = useState(false)
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [imgError, setImgError] = useState(false)
 
   // build image URLs using Vite's import.meta.url
   const imgs = (p.images || []).map(img => new URL(`../images/${img}`, import.meta.url).href)
   const preview = imgs[index] || imgs[0]
+
+  // reset load state when image changes
+  React.useEffect(() => {
+    setImgLoaded(false)
+    setImgError(false)
+  }, [preview])
 
   const prev = () => setIndex((i) => (i - 1 + imgs.length) % imgs.length)
   const next = () => setIndex((i) => (i + 1) % imgs.length)
@@ -43,10 +51,19 @@ function ProjectCard({ p }) {
             alt={p.name}
             loading="lazy"
             decoding="async"
-            width="1920"
-            height="1080"
-            sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            width="384"
+            height="216"
+            onLoad={() => setImgLoaded(true)}
+            onError={() => setImgError(true)}
+            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: imgError ? 'none' : 'block' }}
           />
+
+          {/* Loading/placeholder overlay */}
+          {(!imgLoaded || imgError) && (
+            <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', bgcolor: 'var(--bg-2)' }}>
+              <div className="loading-spinner" />
+            </Box>
+          )}
 
           {/* Prev/next buttons: visible with gray translucent background */}
           {imgs.length > 1 && (

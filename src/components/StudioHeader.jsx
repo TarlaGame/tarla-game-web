@@ -35,7 +35,7 @@ export default function StudioHeader({ info }) {
       <div className="header-details">
         <div className="header-inner">
           <div className="header-left">
-            <p className="header-desc">{info.description}</p>
+            <p className="header-desc">你好！我们是白塔纪事工作室。<br/>目前我们正在研发剧情向+模拟经营独立游戏《塔尔拉杂货店》，欢迎关注我们的进展! </p>
           </div>
         </div>
       </div>
