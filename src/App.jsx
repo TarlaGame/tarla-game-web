@@ -15,7 +15,8 @@ export default function App() {
     // When loading completes, show content shortly after. Keep a small delay to allow the splash exit animation,
     // but keep it short so mobile users don't wait too long.
     if (!isLoading) {
-      const timer = setTimeout(() => setShowContent(true), 600)
+      // keep the splash visible for 2.5s before showing main content
+      const timer = setTimeout(() => setShowContent(true), 3500)
       return () => clearTimeout(timer)
     }
   }, [isLoading])
