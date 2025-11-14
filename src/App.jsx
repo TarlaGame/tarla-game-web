@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense, lazy } from 'react'
 import data from './data'
 import NavBar from './components/NavBar'
 import StudioHeader from './components/StudioHeader'
-import Projects from './components/Projects'
-import SocialLinks from './components/SocialLinks'
+const Projects = lazy(() => import('./components/Projects'))
+const SocialLinks = lazy(() => import('./components/SocialLinks'))
 import Footer from './components/Footer'
 import Splash from './components/Splash'
 
@@ -12,11 +12,10 @@ export default function App() {
   const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
-    // 当 isLoading 变为 false 后，等待时间再显示内容
+    // When loading completes, show content shortly after. Keep a small delay to allow the splash exit animation,
+    // but keep it short so mobile users don't wait too long.
     if (!isLoading) {
-      const timer = setTimeout(() => {
-        setShowContent(true)
-      }, 4000) // 4秒延迟，对应 logo 动画时长
+      const timer = setTimeout(() => setShowContent(true), 600)
       return () => clearTimeout(timer)
     }
   }, [isLoading])
@@ -34,11 +33,15 @@ export default function App() {
         <main className="container">
           <section id="projects">
             <h2>游戏</h2>
-            <Projects items={data.projects} />
+            <Suspense fallback={<div style={{padding:'2rem',textAlign:'center'}}>加载中…</div>}>
+              <Projects items={data.projects} />
+            </Suspense>
           </section>
           <section id="contact">
             <h2>关注我们</h2>
-            <SocialLinks links={data.social} />
+            <Suspense fallback={<div style={{padding:'1rem',textAlign:'center'}}>加载中…</div>}>
+              <SocialLinks links={data.social} />
+            </Suspense>
           </section>
         </main>
         <Footer />
