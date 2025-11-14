@@ -21,7 +21,7 @@ const data = {
       tags: ['消除', '经营', '休闲'],
       images: ['candyDream/1.png','candyDream/2.png','candyDream/3.png'],
       download: 'https://ug.link/tarlahstone/filemgr/share-download/?id=1f2e0172e7fd4ce5aa7784607a469a43',
-      video: 'https://www.bilibili.com/video/BV1wRyXBaEx4/?spm_id_from=333.1387.homepage.video_card.click'
+      video: 'https://www.bilibili.com/video/BV19Vy9BEE6r/?share_source=copy_web&vd_source=d3be327a4ea44d60dec8b040b917b8d8'
     }
   ],
   social: [
