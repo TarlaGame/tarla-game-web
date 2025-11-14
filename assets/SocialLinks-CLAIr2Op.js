@@ -1,0 +1,1 @@
+import{j as e}from"./index-CP4c5TDG.js";function i({links:r}){return e.jsx("div",{className:"social-list",children:r.map(a=>e.jsx("a",{className:"social-item",href:a.url,target:"_blank",rel:"noreferrer","aria-label":a.label,children:a.label},a.id))})}export{i as default};
